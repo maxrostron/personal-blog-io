@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "start": "npm --prefix ./server/ run start",
+    "server": "npm --prefix ./server/ run devstart",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix clientcd"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7",
+    "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "15.12.0"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
+  }
+}
