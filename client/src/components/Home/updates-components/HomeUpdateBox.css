@@ -1,23 +1,129 @@
 .home__update-container {
-  border: 1px solid black;
+  border-left: 1px solid rgba(0, 0, 0, 0.234);
   width: 30rem;
-  height: 30rem;
-  top: 3rem;
-  border-radius: 0.5rem;
-  margin-left: 6rem;
+  min-width: 450px;
+  overflow: auto;
+  top: 1.5rem;
+  margin-left: 3rem;
   position: relative;
+  padding: 0rem 1rem;
+}
+
+.home__update-container > h1 {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #011931;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.home__update {
+  border-top: 1px solid rgba(0, 0, 0, 0.234);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.home__update:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.83);
+  border-radius: 0.1rem;
+  color: #05386b;
+}
+
+.home__update-color {
+  width: 0.36rem;
+  border-radius: 1rem;
+  margin-top: 0rem;
+  height: 90%;
+  background-color: #05386b;
+}
+
+.home__update-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 0.6rem;
+}
+
+.home__update-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.home__update-path {
+  flex: 4;
+  font-size: 0.7rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: #000000b1;
+}
+
+.home__update-date {
+  font-size: 0.7rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: #000000b1;
+}
+
+.home__update-new {
+  border-radius: 0.2rem;
+  padding: 0.05rem 0.2rem;
+  background-color: #278e8d;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin-left: 0.2rem;
+}
+
+.home__update-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-top: 0.1rem;
+  width: 80%;
+}
+
+.home__update-blurb {
+  font-weight: 400;
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: #000000b1;
+  width: 90%;
+  height: 2.5rem;
 }
 
 @media (max-width: 930px) {
   .home__update-container {
     margin-left: 0rem;
-    margin-top: 7.5rem;
+    margin-top: 8.5rem;
     max-width: 620px;
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.234);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home__update {
+    height: 6.5rem;
+    width: 75%;
   }
 }
 
 @media (min-width: 1024px) {
   .home__update-container {
     width: 39rem;
+    margin-left: 6rem;
+    padding-left: 3rem;
+    padding-right: 5.4rem;
   }
 }
