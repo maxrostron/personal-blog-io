@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavItem from "./nav-components/NavItem";
 import "./Navbar.css";
-import pageLogo from "../../assets/images/logo_header_transparent.svg";
+import pageLogo from "./nav-components/logo_header_transparent.svg";
 
 const Navbar = () => {
   const [open, setOpen] = useState();
@@ -10,7 +10,7 @@ const Navbar = () => {
       url: "/made",
       displayName: "Made:",
       pages: [
-        "25Veg",
+        "this",
         "Placeholder",
         "Placeholder",
         "Placeholder",
@@ -18,23 +18,14 @@ const Navbar = () => {
       ],
     },
     open: {
-      url: "/open",
-      displayName: "Open:",
-      pages: [
-        "OKRs",
-        "Media",
-        "Beliefs",
-        "Photos",
-        "Gear",
-        "FAQ",
-        "This",
-        "Now",
-      ],
+      url: "/more",
+      displayName: "More:",
+      pages: ["now", "open", "books", "photos", "gear", "FAQ"],
     },
     blog: {
       url: "/blog",
       displayName: "Blog",
-      pages: [],
+      pages: ["opinions", "updates", "essays"],
     },
     subscribe: {
       url: "/subscribe",
