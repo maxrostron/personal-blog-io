@@ -1,0 +1,37 @@
+.footer__container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  height: 3rem;
+  width: 100vw;
+  border-bottom: 1px solid rgb(242, 242, 242);
+  background-color: rgba(255, 255, 255, 0.563);
+  margin-top: 3rem;
+}
+
+.footer__container > a > img {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 2rem;
+  filter: invert(16%) sepia(79%) saturate(1320%) hue-rotate(188deg)
+    brightness(80%) contrast(103%);
+  fill-opacity: 0.4;
+}
+
+.footer__container > a > img:hover {
+  filter: invert(16%) sepia(79%) saturate(1320%) hue-rotate(188deg)
+    brightness(150%) contrast(103%);
+  fill-opacity: 0.4;
+}
+
+@media (max-width: 930px) {
+  .footer__container {
+    position: relative;
+    margin-top: 2rem;
+  }
+}

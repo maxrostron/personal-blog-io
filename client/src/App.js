@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./components/Home/HomePage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <section className="app__container">
         <HomePage />
       </section>
+      <Footer />
     </div>
   );
 }

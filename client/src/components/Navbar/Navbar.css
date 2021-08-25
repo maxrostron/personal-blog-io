@@ -6,6 +6,7 @@
   width: 100vw;
   border-bottom: 1px solid rgb(242, 242, 242);
   background-color: white;
+  position: fixed;
 }
 
 .navbar__contents {
@@ -61,7 +62,7 @@
 }
 
 .navbar__navitem:hover {
-  background-color: #caf2ec59;
+  background-color: #d4e0e285;
 }
 
 .navbar__navitem-highlight {
@@ -75,7 +76,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: #a0e6dd;
+  color: #9eb7a7;
   text-decoration: none;
 }
 
@@ -85,11 +86,11 @@
 }
 
 .subscribeBtn {
-  background-color: #a3f5e987;
+  background-color: #d4e0e295;
 }
 
 .subscribeBtn:hover {
-  background-color: #a3f5e9;
+  background-color: #278e8c75;
 }
 
 .navbar__caret {
@@ -107,7 +108,7 @@
   margin-left: 3px;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
-  border-top: 4px solid #a0e6dd;
+  border-top: 4px solid #9eb7a7;
 }
 
 .navbar__drop-down-menu {

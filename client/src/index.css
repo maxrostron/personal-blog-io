@@ -8,6 +8,7 @@ body {
   font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
   font-size: 14px;
   background-color: #f8f5f2;
+  overflow-x: hidden;
 }
 
 .app__container {
@@ -17,7 +18,10 @@ body {
   width: 80vw;
   max-width: 1040px;
   margin: 0 auto;
+  padding-top: 3rem;
 }
 
-.app__container > * {
+.App {
+  position: relative;
+  height: 100vh;
 }
