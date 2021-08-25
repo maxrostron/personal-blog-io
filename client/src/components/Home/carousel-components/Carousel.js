@@ -10,8 +10,13 @@ function Carousel() {
   const [card, setCard] = useState("code");
   const [fadeIn, setFadeIn] = useState(true);
 
+  setInterval(() => {
+    handleLeftArrow;
+  }, 1000);
+
   function handleRightArrow() {
     setFadeIn(!fadeIn);
+
     setTimeout(() => {
       setFadeIn(true);
       if (card === "business") {
@@ -26,6 +31,7 @@ function Carousel() {
 
   function handleLeftArrow() {
     setFadeIn(!fadeIn);
+
     setTimeout(() => {
       setFadeIn(true);
       if (card === "business") {

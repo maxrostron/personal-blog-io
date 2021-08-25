@@ -1,0 +1,23 @@
+.home__update-container {
+  border: 1px solid black;
+  width: 30rem;
+  height: 30rem;
+  top: 3rem;
+  border-radius: 0.5rem;
+  margin-left: 6rem;
+  position: relative;
+}
+
+@media (max-width: 930px) {
+  .home__update-container {
+    margin-left: 0rem;
+    margin-top: 7.5rem;
+    max-width: 620px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home__update-container {
+    width: 39rem;
+  }
+}

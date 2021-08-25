@@ -1,0 +1,163 @@
+@media (max-width: 768px) {
+  .home__carousel {
+    align-items: center;
+  }
+
+  .home__name-container {
+    left: 0rem;
+  }
+
+  .home__name-container > h1 {
+    text-align: center;
+  }
+}
+
+.home__carousel {
+  position: relative;
+  left: 0rem;
+  top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.home__circle-container {
+  position: absolute;
+  z-index: 2;
+  top: 0.2rem;
+}
+
+.home__name-container {
+  position: absolute;
+  z-index: 2;
+  top: -1.9rem;
+  left: -0.2rem;
+}
+
+.home__name-container > h1 {
+  font-size: 32px;
+  text-align: left;
+}
+
+.home__title-container {
+  position: absolute;
+  z-index: 2;
+  top: 29rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home__title-container > h1 {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 30px;
+}
+
+.home__title-container > h2 {
+  width: 19rem;
+  text-align: center;
+  line-height: 21px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+#home__circle {
+  animation: circle 300s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+  position: absolute;
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+.home__arrows-container {
+  position: absolute;
+  z-index: 3;
+  top: 10rem;
+}
+
+svg {
+  pointer-events: none;
+}
+
+path {
+  pointer-events: auto;
+}
+
+rect {
+  pointer-events: auto;
+}
+
+.home__arrow:hover {
+  cursor: pointer;
+}
+
+.home__carousel-images {
+  position: relative;
+  width: 18rem;
+  height: 27rem;
+  overflow: clip;
+  top: 1.6rem;
+}
+
+.home__carousel-scenery,
+.home__carousel-body,
+.home__carousel-filter,
+.home__carousel-words {
+  position: absolute;
+  width: 18rem;
+  left: 0;
+  top: 0;
+}
+.home__carousel-body {
+  z-index: 2;
+  animation: carousel-body 15s linear infinite alternate;
+}
+
+@keyframes carousel-body {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.home__carousel-words {
+  z-index: 1;
+}
+
+@keyframes carousel-words {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

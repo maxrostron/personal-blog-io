@@ -9,6 +9,7 @@ function Arrows({ handleLeftArrow, handleRightArrow }) {
       handleLeftArrow();
     }
   };
+
   return (
     <>
       <svg

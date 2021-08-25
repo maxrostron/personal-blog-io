@@ -145,3 +145,15 @@
 .navbar__drop-down-item:visited {
   text-decoration: none;
 }
+
+/* @media (max-width: 575px) {
+  .navbar__contents {
+    position: relative;
+  }
+  .navbar_nav-item-container {
+    position: absolute;
+    top: 8rem;
+    right: -1rem;
+    flex-direction: column;
+  }
+} */
