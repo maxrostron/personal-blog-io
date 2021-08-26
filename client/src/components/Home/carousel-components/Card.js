@@ -43,7 +43,7 @@ function Card({ card, fadeIn }) {
         src={wordsSrc}
         className="home__carousel-words"
         style={{
-          animation: `${animation} 1.5s, carousel-words 10s linear infinite alternate`,
+          animation: `${animation} 1.5s, carousel-words 7s linear infinite alternate`,
         }}
       />
       <img
