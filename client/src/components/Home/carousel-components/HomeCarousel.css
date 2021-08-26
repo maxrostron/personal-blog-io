@@ -15,7 +15,7 @@
 .home__carousel {
   position: relative;
   left: 0rem;
-  top: 2.5rem;
+  top: 2rem;
   display: flex;
   justify-content: center;
 }
