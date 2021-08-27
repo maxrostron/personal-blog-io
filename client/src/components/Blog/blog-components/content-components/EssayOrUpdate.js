@@ -1,6 +1,6 @@
 import React from "react";
 
-function Article() {
+function EssayOrUpdate() {
   return (
     <article className="blog__article-content-writing">
       {" "}
@@ -28,4 +28,4 @@ function Article() {
   );
 }
 
-export default Article;
+export default EssayOrUpdate;

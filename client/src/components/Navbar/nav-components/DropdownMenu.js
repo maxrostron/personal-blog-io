@@ -1,17 +1,22 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import { A } from "hookrouter";
+import onClickOutside from "react-onclickoutside";
 
-function DropdownMenu({ pathway }) {
+function DropdownMenu({ pathway, setOpen }) {
   const pages = pathway.pages;
   const url = pathway.url;
+
+  DropdownMenu.handleClickOutside = () => setOpen("");
+
   return (
     <ul className="navbar__drop-down-menu">
       {pages.map((page, index) => {
         return (
           <li key={index}>
-            <a className="navbar__drop-down-item" href={`${url}/${page}`}>
+            <A className="navbar__drop-down-item" href={`${url}/${page}`}>
               {page}
-            </a>
+            </A>
           </li>
         );
       })}
@@ -19,4 +24,8 @@ function DropdownMenu({ pathway }) {
   );
 }
 
-export default DropdownMenu;
+const clickOutsideConfig = {
+  handleClickOutside: () => DropdownMenu.handleClickOutside,
+};
+
+export default onClickOutside(DropdownMenu, clickOutsideConfig);

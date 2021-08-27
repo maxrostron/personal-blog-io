@@ -1,0 +1,22 @@
+.utility__upvote {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.utility__upvote:hover {
+  cursor: pointer;
+}
+
+.utility__upvote > img {
+  width: 0.5rem;
+  margin-right: 0.2rem;
+  filter: invert(44%) sepia(90%) saturate(314%) hue-rotate(131deg)
+    brightness(90%) contrast(95%);
+}
+
+.utility__upvote > p {
+  font-size: 0.8em;
+  line-height: 0.5rem;
+  color: #278e8d;
+}

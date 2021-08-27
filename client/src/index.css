@@ -29,3 +29,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+A {
+  text-decoration: none;
+}
+
+.page-not-found {
+  height: 30rem;
+}

@@ -1,9 +1,23 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import Article from "./Article";
-import CommentSection from "./CommentSection";
+import EssayOrUpdate from "./content-components/EssayOrUpdate";
+import CommentSection from "./comment-components/CommentSection";
+import Opinion from "./content-components/Opinion";
 
-function Content() {
+function Content({ currentPage }) {
   const [showComments, setShowComments] = useState(false);
+
+  //THIS NEEDS CLEANING UP!!! WONT WORK IN REALITY BUT WORKS FOR NOW
+  //think about making one component for each opinions, updates and essays reusing similar sub components like title, date etc. Then direct to the relevant component (opinionPage.js Updatepage.js etc.)
+  function contentRender() {
+    if (!showComments && currentPage === "opinions") {
+      return <Opinion />;
+    } else if (!showComments) {
+      return <EssayOrUpdate />;
+    } else {
+      return <CommentSection />;
+    }
+  }
 
   return (
     <section className="blog__content-container">
@@ -37,7 +51,7 @@ function Content() {
           <div className="blog__content-toggle-counter">11</div>
         </div>
       </div>
-      <>{showComments ? <CommentSection /> : <Article />}</>
+      <>{contentRender()}</>
     </section>
   );
 }

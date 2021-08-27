@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import DropdownMenu from "./DropdownMenu";
-import onClickOutside from "react-onclickoutside";
+// import onClickOutside from "react-onclickoutside";
 
 function NavItem({ pathway, open, setOpen }) {
   const [dropDown, setDropDown] = useState(false);
@@ -22,14 +22,13 @@ function NavItem({ pathway, open, setOpen }) {
     setOpen(pathway.url);
   };
 
-  NavItem.handleClickOutside = () => setOpen("");
+  // NavItem.handleClickOutside = () => setOpen("");
 
   return (
     <>
       <div>
-        <a
+        <div
           style={{ color: highlight }}
-          href="#"
           onClick={handleClick}
           className={"navbar__navitem" + highlight + subscribeBtn}
         >
@@ -37,15 +36,12 @@ function NavItem({ pathway, open, setOpen }) {
           {pathway.pages.length > 0 && (
             <span className={"navbar__caret" + highlight}></span>
           )}{" "}
-        </a>
-        <>{dropDown && <DropdownMenu pathway={pathway} />}</>
+        </div>
+
+        {dropDown && <DropdownMenu pathway={pathway} setOpen={setOpen} />}
       </div>
     </>
   );
 }
 
-const clickOutsideConfig = {
-  handleClickOutside: () => NavItem.handleClickOutside,
-};
-
-export default onClickOutside(NavItem, clickOutsideConfig);
+export default NavItem;

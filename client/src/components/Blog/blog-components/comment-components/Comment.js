@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import Upvote from "./blog-assets/thumbs-up.svg";
+import Upvote from "../../../../utils/Upvote";
 
 function Comment() {
   const [hide, setHide] = useState(false);
-  const [votes, setVotes] = useState(0);
-
-  const handleUpvote = () => {
-    const newVoteCount = votes + 1;
-    setVotes(newVoteCount);
-  };
 
   return (
     <div className="blog__comment">
@@ -31,10 +25,7 @@ function Comment() {
               ipsum{" "}
             </p>
             <div className="blog__comment-socials">
-              <div onClick={handleUpvote}>
-                <img src={Upvote} alt="Thumbs up icon"></img>
-                <p>{`Recommend ${votes}`}</p>
-              </div>
+              <Upvote />
             </div>
           </>
         )}

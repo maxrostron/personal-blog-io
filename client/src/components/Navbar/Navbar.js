@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavItem from "./nav-components/NavItem";
 import "./Navbar.css";
 import pageLogo from "./nav-components/logo_header_transparent.svg";
+import { A } from "hookrouter";
 
 const Navbar = () => {
   const [open, setOpen] = useState();
@@ -42,10 +43,9 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="navbar__contents">
-        <div className="navbar__logo">
+        <A href="/" className="navbar__logo">
           <img alt="logo" src={pageLogo} className="navbar__logo-icon"></img>
-          {/* <a className="navbar__logo-title">Max | Rostron</a> */}
-        </div>
+        </A>
 
         <nav className="navbar_nav-item-container">
           <NavItem pathway={pathways.made} open={open} setOpen={setOpen} />

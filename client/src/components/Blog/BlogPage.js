@@ -1,9 +1,14 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import React, { useState } from "react";
 import Content from "./blog-components/Content";
 import ArticleList from "./blog-components/ArticleList";
 import "./BlogPage.css";
+import "react-quill/dist/quill.snow.css";
 
-function BlogPage() {
+function BlogPage({ page }) {
+  console.log(page);
+
+  const [currentPage, setCurrentPage] = useState({ page });
   return (
     <div className="blog__container">
       <header>
@@ -11,8 +16,11 @@ function BlogPage() {
         <h2></h2>
       </header>
       <section>
-        <ArticleList />
-        <Content />
+        <ArticleList
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+        <Content currentPage={currentPage} />
       </section>
     </div>
   );
