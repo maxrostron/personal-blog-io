@@ -1,14 +1,29 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Content from "./blog-components/Content";
 import ArticleList from "./blog-components/ArticleList";
 import "./BlogPage.css";
 import "react-quill/dist/quill.snow.css";
+import BlogPageContextProvider, { BlogPageContext } from "./BlogPageContext";
 
-function BlogPage({ page }) {
-  console.log(page);
+function BlogPage({ contentType, postId }) {
+  return (
+    <div>
+      <BlogPageContextProvider>
+        <BlogPageContainer contentType={contentType} postId={postId} />
+      </BlogPageContextProvider>
+    </div>
+  );
+}
 
-  const [currentPage, setCurrentPage] = useState({ page });
+function BlogPageContainer({ contentType, postId }) {
+  const blogContext = useContext(BlogPageContext);
+  blogContext.setCurrentPage(contentType);
+  blogContext.setCurrentPost(postId);
+  console.log("contexttype");
+  console.log(contentType);
+  console.log(postId);
+
   return (
     <div className="blog__container">
       <header>
@@ -16,11 +31,8 @@ function BlogPage({ page }) {
         <h2></h2>
       </header>
       <section>
-        <ArticleList
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
-        <Content currentPage={currentPage} />
+        <ArticleList />
+        <Content />
       </section>
     </div>
   );

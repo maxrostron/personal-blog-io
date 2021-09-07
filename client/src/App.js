@@ -11,7 +11,12 @@ function App() {
     "": () => <HomePage />,
     "/": () => <HomePage />,
     "/blog": () => <BlogPage />,
-    "/blog/:id": ({ id }) => <BlogPage page={id} />,
+    "/blog/:contentType": ({ contentType }) => (
+      <BlogPage contentType={contentType} />
+    ),
+    "/blog/:contentType/:postId": ({ contentType, postId }) => (
+      <BlogPage contentType={contentType} postId={postId} />
+    ),
   };
 
   const routeResults = useRoutes(routes);

@@ -79,14 +79,17 @@
   list-style-type: none;
   margin-top: 0.5rem;
   margin-left: 0.6rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.blog__article-list > li {
+.blog__article-list > a {
   margin-top: 0.2rem;
   padding: 0.1rem 0;
+  color: rgba(0, 0, 0, 0.823);
 }
 
-.blog__article-list > li:hover {
+.blog__article-list > a:hover {
   color: #032d57;
   cursor: pointer;
   background-color: rgb(242, 242, 242);
