@@ -10,7 +10,7 @@ import CommentToggle from "./content-components/common-content-components/Commen
 function Content() {
   const blogContext = useContext(BlogPageContext);
   const article =
-    blogContext.currentPage === "opinions" ? <Opinion /> : <Update />;
+    blogContext.currentRoute === "opinions" ? <Opinion /> : <Update />;
   return (
     <section className="blog__content-container">
       <ContentHeader />

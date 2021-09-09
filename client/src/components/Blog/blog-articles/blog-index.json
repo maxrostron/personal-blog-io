@@ -1,0 +1,95 @@
+[
+  {
+    "_id": "test-data",
+    "mdx": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/Box.mdx",
+    "meta": {
+      "isPublished": true,
+      "publishedOn": "2016-05-18T16:00:00Z",
+      "category": "Personal Update",
+      "title": "Testing my blog",
+      "slug": "blog-test",
+      "seoTitle": "Testing my blog using MDX, React",
+      "abstract": "An indepth test of my blog and how it works",
+      "author": "Max Rostron",
+      "likes": 0
+    },
+    "comments": [
+      {
+        "number": "1",
+        "name": "Beans",
+        "email": "banna@blue.com",
+        "comment": "hey how's it going today",
+        "postedAt": "2016-05-18T16:00:00Z"
+      },
+      {
+        "number": "2",
+        "name": "Chucky",
+        "email": "banna@blue.com",
+        "comment": "hey how's it going tomorrow",
+        "postedAt": "2017-05-18T16:00:00Z"
+      }
+    ]
+  },
+  {
+    "_id": "test-data2",
+    "mdx": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/Box.mdx",
+    "meta": {
+      "isPublished": true,
+      "publishedOn": "2016-05-18T16:00:00Z",
+      "category": "Living Essay",
+      "title": "Testing my blog",
+      "slug": "blog-test",
+      "seoTitle": "Testing my blog using MDX, React",
+      "abstract": "An indepth test of my blog and how it works",
+      "author": "Max Rostron",
+      "likes": 0
+    },
+    "comments": [
+      {
+        "number": "1",
+        "name": "Beans",
+        "email": "banna@blue.com",
+        "comment": "hey how's it going today",
+        "postedAt": "2016-05-18T16:00:00Z"
+      },
+      {
+        "number": "2",
+        "name": "Chucky",
+        "email": "banna@blue.com",
+        "comment": "hey how's it going tomorrow",
+        "postedAt": "2017-05-18T16:00:00Z"
+      }
+    ]
+  },
+  {
+    "_id": "test-data3",
+    "mdx": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/Box.mdx",
+    "meta": {
+      "isPublished": true,
+      "publishedOn": "2016-05-18T16:00:00Z",
+      "category": "Personal Update",
+      "title": "Testing my blog",
+      "slug": "blog-test",
+      "seoTitle": "Testing my blog using MDX, React",
+      "abstract": "An indepth test of my blog and how it works",
+      "author": "Max Rostron",
+      "likes": 0
+    },
+    "comments": [
+      {
+        "number": "1",
+        "name": "Beans",
+        "email": "banna@blue.com",
+        "comment": "hey how's it going today",
+        "postedAt": "2016-05-18T16:00:00Z"
+      },
+      {
+        "number": "2",
+        "name": "Chucky",
+        "email": "banna@blue.com",
+        "comment": "hey how's it going tomorrow",
+        "postedAt": "2017-05-18T16:00:00Z"
+      }
+    ]
+  }
+]

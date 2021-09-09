@@ -4,7 +4,8 @@
     "server": "npm --prefix ./server/ run devstart",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "update-blogs": "mongoimport --uri='mongodb+srv://cluster0.nhpi4.mongodb.net/maxrostron-io?retryWrites=true&w=majority' --username='maxrostron' --collection='blogs' --file='./client/src/components/Blog/blog-articles/blog-index.json' --jsonArray --mode=merge"
   },
   "dependencies": {
     "cors": "^2.8.5",

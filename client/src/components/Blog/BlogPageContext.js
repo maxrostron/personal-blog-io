@@ -5,19 +5,19 @@ import React, { createContext, useState } from "react";
 export const BlogPageContext = createContext();
 
 const BlogPageContextProvider = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState("opinions");
+  const [currentRoute, setCurrentRoute] = useState("");
+  const [currentRequest, setCurrentRequest] = useState("");
   const [showComments, setShowComments] = useState(false);
-  const [currentPost, setCurrentPost] = useState(null);
 
   return (
     <BlogPageContext.Provider
       value={{
-        currentPage,
-        setCurrentPage,
+        currentRoute,
+        setCurrentRoute,
         showComments,
         setShowComments,
-        currentPost,
-        setCurrentPost,
+        currentRequest,
+        setCurrentRequest,
       }}
     >
       {children}

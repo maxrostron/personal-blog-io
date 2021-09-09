@@ -3,6 +3,6 @@ import { renderHome } from "../controllers/api.controller.js";
 
 const router = express.Router();
 
-router.get("/", renderHome);
+router.get("/blog/:name", renderHome);
 
 export default router;

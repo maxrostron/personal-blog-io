@@ -1,22 +1,40 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-no-comment-textnodes */
-import React, { useContext } from "react";
-import OpinionsList from "./list-components/OpinionsList";
-import UpdatesList from "./list-components/UpdatesList";
-import { BlogPageContext } from "../BlogPageContext";
-import ListToggle from "./list-components/ListToggle";
+import React, { useState, useEffect } from "react";
+import { A } from "hookrouter";
 
-function ArticleList() {
-  const blogContext = useContext(BlogPageContext);
+function ArticleList({ route }) {
+  const [list, setList] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/blog/${route}`)
+      .then(function (res) {
+        return res.json();
+      })
+      .then((data) => {
+        let tempList = [];
+        data.forEach((blog) => {
+          tempList.push(blog.meta);
+        });
+
+        setList(tempList);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, [route]);
 
   return (
     <aside className="blog__article-list-container">
-      <ListToggle />
-      {blogContext.currentPage === "opinions" ? (
-        <OpinionsList />
-      ) : (
-        <UpdatesList />
-      )}
+      <div className="blog__article-list">
+        {list &&
+          list.map((update, index) => {
+            return (
+              <A href={`blog/${route}/${update.slug}`} key={index}>
+                {update.title}
+              </A>
+            );
+          })}
+      </div>
     </aside>
   );
 }

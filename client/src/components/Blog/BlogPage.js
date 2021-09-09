@@ -1,38 +1,38 @@
 /* eslint-disable react/prop-types */
 import React, { useContext } from "react";
-import Content from "./blog-components/Content";
+// import Content from "./blog-components/Content";
 import ArticleList from "./blog-components/ArticleList";
 import "./BlogPage.css";
 import "react-quill/dist/quill.snow.css";
 import BlogPageContextProvider, { BlogPageContext } from "./BlogPageContext";
 
-function BlogPage({ contentType, postId }) {
+function BlogPage({ route, request }) {
+  console.log(route);
   return (
     <div>
       <BlogPageContextProvider>
-        <BlogPageContainer contentType={contentType} postId={postId} />
+        <BlogPageContainer route={route} request={request} />
       </BlogPageContextProvider>
     </div>
   );
 }
 
-function BlogPageContainer({ contentType, postId }) {
+function BlogPageContainer({ route, request }) {
   const blogContext = useContext(BlogPageContext);
-  blogContext.setCurrentPage(contentType);
-  blogContext.setCurrentPost(postId);
-  console.log("contexttype");
-  console.log(contentType);
-  console.log(postId);
+  blogContext.setCurrentRoute(route);
+  blogContext.setCurrentRequest(request);
+
+  console.log(route);
 
   return (
     <div className="blog__container">
       <header>
-        <h1>Blog</h1>
-        <h2></h2>
+        <h1>{route === "updates" ? "Personal Updates" : "Living Essays"}</h1>
       </header>
+
       <section>
-        <ArticleList />
-        <Content />
+        <ArticleList route={route} />
+        {/* <Content /> */}
       </section>
     </div>
   );

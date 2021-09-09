@@ -3,8 +3,7 @@ import { BlogPageContext } from "../../../BlogPageContext";
 
 function ContentHeader() {
   const blogContext = useContext(BlogPageContext);
-  const pageHeader = `${blogContext.currentPost} Title`;
-  console.log(blogContext.currentPost);
+  const pageHeader = `${blogContext.currentRequest} Title`;
   return (
     <header>
       <h1 className="blog__article-content-title">{pageHeader}</h1>

@@ -11,22 +11,29 @@ const Navbar = () => {
       url: "/made",
       displayName: "Made:",
       pages: [
-        "this",
-        "Placeholder",
-        "Placeholder",
-        "Placeholder",
-        "Placeholder",
+        { display: "This Website", url: "/this" },
+        { display: "Coming Soon", url: "/soon" },
       ],
     },
     open: {
       url: "/more",
       displayName: "More:",
-      pages: ["now", "open", "books", "photos", "gear", "FAQ"],
+      pages: [
+        { display: "Now", url: "/now" },
+        { display: "Open", url: "/open" },
+        { display: "Books", url: "/books" },
+        { display: "Photos", url: "/photos" },
+        { display: "My Gear", url: "/gear" },
+        { display: "FAQ", url: "/faq" },
+      ],
     },
     blog: {
       url: "/blog",
       displayName: "Blog",
-      pages: ["opinions", "updates", "essays"],
+      pages: [
+        { display: "Living Essays", url: "/essays" },
+        { display: "Personal Updates", url: "/updates" },
+      ],
     },
     subscribe: {
       url: "/subscribe",

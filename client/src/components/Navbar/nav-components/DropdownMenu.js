@@ -8,14 +8,13 @@ function DropdownMenu({ pathway, setOpen }) {
   const url = pathway.url;
 
   DropdownMenu.handleClickOutside = () => setOpen("");
-
   return (
     <ul className="navbar__drop-down-menu">
       {pages.map((page, index) => {
         return (
           <li key={index}>
-            <A className="navbar__drop-down-item" href={`${url}/${page}`}>
-              {page}
+            <A className="navbar__drop-down-item" href={`${url}${page.url}`}>
+              {page.display}
             </A>
           </li>
         );
