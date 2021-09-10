@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BlogPageContext } from "../../../BlogPageContext";
+import { BlogPageContext } from "../../BlogPageContext";
 
 function CommentToggle() {
   const blogContext = useContext(BlogPageContext);

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { A } from "hookrouter";
 
-function ArticleList({ route }) {
+function ArticleList({ route, setArticle }) {
   const [list, setList] = useState(null);
 
   useEffect(() => {
@@ -23,13 +23,23 @@ function ArticleList({ route }) {
       });
   }, [route]);
 
+  const handleClick = (route, update) => (e) => {
+    e.preventDefault();
+    const article = `${route}/${update.slug}`;
+    setArticle(article);
+  };
+
   return (
     <aside className="blog__article-list-container">
       <div className="blog__article-list">
         {list &&
           list.map((update, index) => {
             return (
-              <A href={`blog/${route}/${update.slug}`} key={index}>
+              <A
+                href={`http://localhost:3000/blog/${route}/${update.slug}`}
+                key={index}
+                onClick={handleClick(route, update)}
+              >
                 {update.title}
               </A>
             );

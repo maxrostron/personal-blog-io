@@ -1,7 +1,6 @@
-import fs, { readFile } from "fs";
 import Blog from "../models/blog.js";
 
-export const renderHome = (req, res) => {
+export const getArticleList = (req, res) => {
   let blogDirectory = undefined;
 
   if (req.params.name === "updates") {
@@ -13,6 +12,16 @@ export const renderHome = (req, res) => {
   }
 
   Blog.find({ "meta.category": `${blogDirectory}` })
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const getArticleData = (req, res) => {
+  Blog.findById(req.params.article)
     .then((result) => {
       res.send(result);
     })

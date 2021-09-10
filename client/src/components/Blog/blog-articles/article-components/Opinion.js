@@ -1,6 +1,6 @@
 import React from "react";
 import Upvote from "../../../../utils/Upvote";
-import headshot from "../blog-assets/headshot.png";
+import headshot from "../article-assets/headshot.png";
 
 function Opinion() {
   return (

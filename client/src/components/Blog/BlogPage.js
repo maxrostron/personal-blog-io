@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from "react";
-// import Content from "./blog-components/Content";
-import ArticleList from "./blog-components/ArticleList";
+import React, { useContext, useState } from "react";
+import Content from "./Content";
+import ArticleList from "./ArticleList";
 import "./BlogPage.css";
 import "react-quill/dist/quill.snow.css";
 import BlogPageContextProvider, { BlogPageContext } from "./BlogPageContext";
@@ -22,7 +22,7 @@ function BlogPageContainer({ route, request }) {
   blogContext.setCurrentRoute(route);
   blogContext.setCurrentRequest(request);
 
-  console.log(route);
+  const [article, setArticle] = useState("");
 
   return (
     <div className="blog__container">
@@ -31,8 +31,8 @@ function BlogPageContainer({ route, request }) {
       </header>
 
       <section>
-        <ArticleList route={route} />
-        {/* <Content /> */}
+        <ArticleList route={route} setArticle={setArticle} />
+        <Content route={route} article={article} />
       </section>
     </div>
   );

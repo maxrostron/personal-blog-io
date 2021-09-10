@@ -1,12 +1,16 @@
 [
   {
-    "_id": "test-data",
-    "mdx": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/Box.mdx",
+    "_id": "blog-test",
+    "mdx": {
+      "pathway": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/BlogTest.mdx",
+      "component": "BlogTest"
+    },
     "meta": {
       "isPublished": true,
       "publishedOn": "2016-05-18T16:00:00Z",
       "category": "Personal Update",
       "title": "Testing my blog",
+      "route": "updates",
       "slug": "blog-test",
       "seoTitle": "Testing my blog using MDX, React",
       "abstract": "An indepth test of my blog and how it works",
@@ -31,14 +35,18 @@
     ]
   },
   {
-    "_id": "test-data2",
-    "mdx": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/Box.mdx",
+    "_id": "blog-test2",
+    "mdx": {
+      "pathway": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/BlogTest2.mdx",
+      "component": "BlogTest2"
+    },
     "meta": {
       "isPublished": true,
       "publishedOn": "2016-05-18T16:00:00Z",
       "category": "Living Essay",
       "title": "Testing my blog",
-      "slug": "blog-test",
+      "route": "essays",
+      "slug": "blog-test2",
       "seoTitle": "Testing my blog using MDX, React",
       "abstract": "An indepth test of my blog and how it works",
       "author": "Max Rostron",
@@ -62,14 +70,18 @@
     ]
   },
   {
-    "_id": "test-data3",
-    "mdx": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/Box.mdx",
+    "_id": "blog-test3",
+    "mdx": {
+      "pathway": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/BlogTest3.mdx",
+      "component": "BlogTest3"
+    },
     "meta": {
       "isPublished": true,
       "publishedOn": "2016-05-18T16:00:00Z",
       "category": "Personal Update",
       "title": "Testing my blog",
-      "slug": "blog-test",
+      "route": "updates",
+      "slug": "blog-test3",
       "seoTitle": "Testing my blog using MDX, React",
       "abstract": "An indepth test of my blog and how it works",
       "author": "Max Rostron",
