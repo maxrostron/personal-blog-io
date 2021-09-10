@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { lazy, Suspense, useEffect, useState } from "react";
-import ContentHeader from "./blog-articles/article-components/ContentHeader";
-import CommentToggle from "./blog-articles/article-components/CommentToggle";
 
-function Content({ article }) {
+function Content({ article, request }) {
   const [mdxFile, setMdxFile] = useState("Introduction");
 
   const Article = lazy(() =>
@@ -17,24 +15,26 @@ function Content({ article }) {
   console.log(mdxFile);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/blog/${article}`)
-      .then(function (res) {
-        return res.json();
-      })
-      .then((data) => {
-        setMdxFile(data.mdx.component);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }, [article]);
+    if (request === undefined) {
+      setMdxFile("Introduction");
+    } else {
+      fetch(`http://localhost:5000/api/blog/${article}`)
+        .then(function (res) {
+          return res.json();
+        })
+        .then((data) => {
+          setMdxFile(data.mdx.component);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  }, [request]);
 
   return (
     <section className="blog__content-container">
-      <ContentHeader />
-      <CommentToggle />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Article />
+      <Suspense fallback={<></>}>
+        <Article article={article} />
       </Suspense>
     </section>
   );
