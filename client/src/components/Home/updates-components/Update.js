@@ -1,14 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
+import format from "date-fns/format";
 import { navigate } from "hookrouter";
 
 function Update({ article }) {
   const [isNew, setIsNew] = useState(null);
-  const dateConversion = () => {
-    const parts = new Date(article.date).toDateString().split(" ");
-    const date = parts[2] + " " + parts[1] + " " + parts[3];
-    return date;
-  };
 
   useEffect(() => {
     const todaysDate = new Date();
@@ -27,7 +23,9 @@ function Update({ article }) {
       <div className="home__update-content">
         <div className="home__update-data">
           <h3 className="home__update-path">{`blog//${article.category}`}</h3>
-          <h3 className="home__update-date">{dateConversion()}</h3>
+          <h3 className="home__update-date">
+            {format(new Date(article.date), "d MMM yyyy")}
+          </h3>
           {isNew && <div className="home__update-new">NEW</div>}
         </div>
         <h1 className="home__update-title">{article.title}</h1>

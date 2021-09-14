@@ -89,16 +89,14 @@
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: underline;
+  max-width: 80ch;
+  align-self: center;
+  margin-left: 1%;
 }
 
 .blog__content-container > a:hover {
   filter: brightness(125%);
   cursor: pointer;
-}
-
-.blog__content-article {
-  width: 90%;
-  margin-top: 0.5rem;
 }
 
 .blog__article-content-title {
@@ -129,7 +127,7 @@
   flex-direction: row;
   justify-content: flex-end;
   margin-top: 0.6rem;
-  align-items: end;
+  align-items: flex-end;
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 700;

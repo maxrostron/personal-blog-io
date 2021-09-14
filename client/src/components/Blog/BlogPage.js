@@ -3,6 +3,7 @@ import React from "react";
 import Content from "./Content";
 import ArticleList from "./ArticleList";
 import "./BlogPage.css";
+import "./Article.css";
 import "react-quill/dist/quill.snow.css";
 import { A } from "hookrouter";
 

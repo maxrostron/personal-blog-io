@@ -3,6 +3,7 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 
 function Content({ slug }) {
   const [mdxFile, setMdxFile] = useState("Introduction");
+  const [article, setArticle] = useState(null);
 
   const Article = lazy(() =>
     import(
@@ -19,6 +20,7 @@ function Content({ slug }) {
       })
       .then((data) => {
         setMdxFile(data.meta.componentName);
+        setArticle(data);
       })
       .catch(function (error) {
         console.log(error);
@@ -28,7 +30,7 @@ function Content({ slug }) {
   return (
     <article className="blog__content-article">
       <Suspense fallback={<></>}>
-        <Article />
+        <Article article={article} />
       </Suspense>
     </article>
   );

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
+import format from "date-fns/format";
 import { A } from "hookrouter";
 
 function ArticleList() {
@@ -19,6 +20,7 @@ function ArticleList() {
       .then((data) => {
         let tempList = [];
         data.forEach((blog) => {
+          blog.meta.date = Date.parse(blog.meta.date);
           tempList.push(blog.meta);
         });
         setList(tempList);
@@ -56,6 +58,7 @@ function ArticleList() {
       .then((data) => {
         let tempList = [];
         data.forEach((blog) => {
+          blog.meta.date = Date.parse(blog.meta.date);
           tempList.push(blog.meta);
         });
         setList(tempList);
@@ -79,25 +82,24 @@ function ArticleList() {
 
       <div className="blog__article-list">
         {list &&
-          list.map((article, index) => {
-            return (
-              <>
-                {renderYear(article.publishedOnYear)}
-                <div className="blog__article-list-item">
-                  <p>
-                    {article.publishedOnDay}{" "}
-                    {article.publishedOnMonth.substring(0, 3)}
-                  </p>
-                  <A
-                    href={`http://localhost:3000/blog/${article.slug}`}
-                    key={index}
-                  >
-                    {article.title}
-                  </A>
-                </div>
-              </>
-            );
-          })}
+          list
+            .sort((a, b) => b.date - a.date)
+            .map((article, index) => {
+              return (
+                <>
+                  {renderYear(article.publishedOnYear)}
+                  <div className="blog__article-list-item">
+                    <p>{format(new Date(article.date), "d MMM")}</p>
+                    <A
+                      href={`http://localhost:3000/blog/${article.slug}`}
+                      key={index}
+                    >
+                      {article.title}
+                    </A>
+                  </div>
+                </>
+              );
+            })}
       </div>
     </section>
   );
