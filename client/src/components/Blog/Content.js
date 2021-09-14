@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { lazy, Suspense, useEffect, useState } from "react";
 
-function Content({ article, request }) {
+function Content({ slug }) {
   const [mdxFile, setMdxFile] = useState("Introduction");
 
   const Article = lazy(() =>
@@ -12,31 +12,25 @@ function Content({ article, request }) {
     )
   );
 
-  console.log(mdxFile);
-
   useEffect(() => {
-    if (request === undefined) {
-      setMdxFile("Introduction");
-    } else {
-      fetch(`http://localhost:5000/api/blog/${article}`)
-        .then(function (res) {
-          return res.json();
-        })
-        .then((data) => {
-          setMdxFile(data.mdx.component);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-  }, [request]);
+    fetch(`http://localhost:5000/api/blog/${slug}`)
+      .then(function (res) {
+        return res.json();
+      })
+      .then((data) => {
+        setMdxFile(data.meta.componentName);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, [slug]);
 
   return (
-    <section className="blog__content-container">
+    <article className="blog__content-article">
       <Suspense fallback={<></>}>
-        <Article article={article} />
+        <Article />
       </Suspense>
-    </section>
+    </article>
   );
 }
 

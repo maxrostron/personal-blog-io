@@ -1,16 +1,15 @@
 [
   {
     "_id": "blog-test",
-    "mdx": {
-      "pathway": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/BlogTest.mdx",
-      "component": "BlogTest"
-    },
     "meta": {
       "isPublished": true,
-      "publishedOn": "25th August 2021",
-      "category": "Personal Update",
+      "publishedOnDay": "25",
+      "publishedOnMonth": "August",
+      "publishedOnYear": "2021",
+      "date": { "$date": "2021-09-20T11:32:58.000Z" },
+      "category": "Updates",
       "title": "Testing my blog",
-      "route": "updates",
+      "componentName": "BlogTest",
       "slug": "blog-test",
       "seoTitle": "Testing my blog using MDX, React",
       "abstract": "An indepth test of my blog and how it works",
@@ -36,16 +35,15 @@
   },
   {
     "_id": "blog-test2",
-    "mdx": {
-      "pathway": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/BlogTest2.mdx",
-      "component": "BlogTest2"
-    },
     "meta": {
       "isPublished": true,
-      "publishedOn": "2016-05-18T16:00:00Z",
-      "category": "Living Essay",
-      "title": "Testing my blog",
-      "route": "essays",
+      "publishedOnDay": "25",
+      "publishedOnMonth": "August",
+      "publishedOnYear": "2020",
+      "date": { "$date": "2020-09-30T11:32:58.000Z" },
+      "category": "Essay",
+      "title": "Testing my blog2",
+      "componentName": "BlogTest2",
       "slug": "blog-test2",
       "seoTitle": "Testing my blog using MDX, React",
       "abstract": "An indepth test of my blog and how it works",
@@ -71,17 +69,50 @@
   },
   {
     "_id": "blog-test3",
-    "mdx": {
-      "pathway": "/home/maxrostron/blog-site/client/src/components/Blog/blog-articles/BlogTest3.mdx",
-      "component": "BlogTest3"
-    },
     "meta": {
       "isPublished": true,
-      "publishedOn": "2016-05-18T16:00:00Z",
-      "category": "Personal Update",
-      "title": "Testing my blog",
-      "route": "updates",
+      "publishedOnDay": "25",
+      "publishedOnMonth": "August",
+      "publishedOnYear": "2019",
+      "date": { "$date": "2019-09-30T11:32:58.000Z" },
+      "category": "Updates",
+      "title": "Testing my blog3",
+      "componentName": "BlogTest3",
       "slug": "blog-test3",
+      "seoTitle": "Testing my blog using MDX, React",
+      "abstract": "An indepth test of my blog and how it works",
+      "author": "Max Rostron",
+      "likes": 0
+    },
+    "comments": [
+      {
+        "number": "1",
+        "name": "Beans",
+        "email": "banna@blue.com",
+        "comment": "hey how's it going today",
+        "postedAt": "2016-05-18T16:00:00Z"
+      },
+      {
+        "number": "2",
+        "name": "Chucky",
+        "email": "banna@blue.com",
+        "comment": "hey how's it going tomorrow",
+        "postedAt": "2017-05-18T16:00:00Z"
+      }
+    ]
+  },
+  {
+    "_id": "blog-test4",
+    "meta": {
+      "isPublished": true,
+      "publishedOnDay": "25",
+      "publishedOnMonth": "August",
+      "publishedOnYear": "2021",
+      "date": { "$date": "2021-09-30T11:32:58.000Z" },
+      "category": "Updates",
+      "title": "Testing my blog4",
+      "componentName": "BlogTest4",
+      "slug": "blog-test4",
       "seoTitle": "Testing my blog using MDX, React",
       "abstract": "An indepth test of my blog and how it works",
       "author": "Max Rostron",

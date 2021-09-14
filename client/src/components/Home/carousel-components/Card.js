@@ -14,8 +14,6 @@ function Card({ card, fadeIn }) {
   let animation;
 
   useEffect(() => {
-    console.log(`${card} is now displaying`);
-
     switch (card) {
       case "business":
         setWordsSrc(BusinessWords);

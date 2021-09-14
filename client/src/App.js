@@ -11,10 +11,7 @@ function App() {
     "": () => <HomePage />,
     "/": () => <HomePage />,
     "/blog": () => <BlogPage />,
-    "/blog/:route": ({ route }) => <BlogPage route={route} />,
-    "/blog/:route/:request": ({ route, request }) => (
-      <BlogPage route={route} request={request} />
-    ),
+    "/blog/:slug": ({ slug }) => <BlogPage slug={slug} />,
   };
 
   const routeResults = useRoutes(routes);

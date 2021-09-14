@@ -1,27 +1,29 @@
 import Blog from "../models/blog.js";
 
 export const getArticleList = (req, res) => {
-  let blogDirectory = undefined;
+  const filter = req.query;
 
-  if (req.params.name === "updates") {
-    blogDirectory = "Personal Update";
-  } else if (req.params.name === "essays") {
-    blogDirectory = "Living Essay";
+  if (Object.keys(req.query).length === 0) {
+    Blog.find({})
+      .then((result) => {
+        res.send(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   } else {
-    blogDirectory = undefined;
+    Blog.find({ "meta.category": filter.category })
+      .then((result) => {
+        res.send(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
-
-  Blog.find({ "meta.category": `${blogDirectory}` })
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 };
 
 export const getArticleData = (req, res) => {
-  Blog.findById(req.params.article)
+  Blog.findById(req.params.slug)
     .then((result) => {
       res.send(result);
     })

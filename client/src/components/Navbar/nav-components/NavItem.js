@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import DropdownMenu from "./DropdownMenu";
-// import onClickOutside from "react-onclickoutside";
+import { navigate } from "hookrouter";
 
 function NavItem({ pathway, open, setOpen }) {
   const [dropDown, setDropDown] = useState(false);
@@ -19,10 +19,8 @@ function NavItem({ pathway, open, setOpen }) {
   }, [open]);
 
   const handleClick = () => {
-    setOpen(pathway.url);
+    pathway.pages.length > 0 ? setOpen(pathway.url) : navigate(pathway.url);
   };
-
-  // NavItem.handleClickOutside = () => setOpen("");
 
   return (
     <>

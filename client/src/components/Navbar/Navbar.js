@@ -30,10 +30,7 @@ const Navbar = () => {
     blog: {
       url: "/blog",
       displayName: "Blog",
-      pages: [
-        { display: "Living Essays", url: "/essays" },
-        { display: "Personal Updates", url: "/updates" },
-      ],
+      pages: [],
     },
     subscribe: {
       url: "/subscribe",

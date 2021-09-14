@@ -12,16 +12,16 @@ const Schema = mongoose.Schema;
 
 const blogSchema = new Schema({
   _id: String,
-  mdx: {
-    pathway: String,
-    component: String,
-  },
   meta: {
     isPublished: Boolean,
-    publishedOn: Date,
+    publishedOnDay: String,
+    publishedOnMonth: String,
+    publishedOnYear: String,
+    date: Date,
     category: String,
     title: String,
     route: String,
+    componentName: String,
     slug: String,
     seoTitle: String,
     abstract: String,
