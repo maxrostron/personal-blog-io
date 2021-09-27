@@ -26,14 +26,13 @@ function CommentCreator({ article }) {
     e.preventDefault();
     setSubmitted(true);
     axios
-      .post(`${config.url.API_URL_BACK}/api/blog/submitcomment`, {
+      .post(`${config.url.API_URL}/api/blog/submitcomment`, {
         blog: `${article._id}`,
         author: `${nameValue}`,
         email: `${emailValue}`,
         comment: `${commentValue}`,
       })
       .then((response) => {
-        console.log("response here");
         console.log(response);
         setSubmitted(false);
         window.location.reload();

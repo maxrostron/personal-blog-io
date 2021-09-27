@@ -5,7 +5,7 @@ import { config } from "../../../../../Constants";
 <div className="blog__article-header">
   <span
     className="blog__article-header-category"
-    onClick={() => navigate(`${config.url.API_URL_FRONT}/blog`)}
+    onClick={() => navigate(`/blog`)}
   >{`blog//${props.article.meta.category}`}</span>
   <h1 className="blog__article-header-title">{props.article.meta.title}</h1>
   <span className="blog__article-header-date">

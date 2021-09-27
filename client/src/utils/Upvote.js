@@ -14,7 +14,7 @@ function Upvote({ comment }) {
     setLiked(true);
 
     axios
-      .post(`${config.url.API_URL_BACK}/api/blog/likecomment`, {
+      .post(`${config.url.API_URL}/api/blog/likecomment`, {
         comment: `${comment._id}`,
       })
       .then(function (response) {

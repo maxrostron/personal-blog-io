@@ -9,7 +9,7 @@ function UpdateBox() {
     handleFetch();
   }, []);
   const handleFetch = () => {
-    fetch(`${config.url.API_URL_BACK}/api/blog`)
+    fetch(`${config.url.API_URL}/api/blog`)
       .then(function (res) {
         return res.json();
       })

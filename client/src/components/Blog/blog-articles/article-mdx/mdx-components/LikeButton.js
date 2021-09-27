@@ -17,7 +17,7 @@ function LikeButton({ article }) {
     setLiked(true);
 
     axios
-      .post(`${config.url.API_URL_BACK}/api/blog/like`, {
+      .post(`${config.url.API_URL}/api/blog/like`, {
         id: `${article._id}`,
         likes: count + 1,
       })
@@ -35,7 +35,7 @@ function LikeButton({ article }) {
     setLiked(false);
 
     axios
-      .post(`${config.url.API_URL_BACK}/api/blog/like`, {
+      .post(`${config.url.API_URL}/api/blog/like`, {
         id: `${article._id}`,
         likes: count - 1,
       })

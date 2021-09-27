@@ -14,7 +14,7 @@ function ArticleList() {
   }, []);
 
   const handleFetch = () => {
-    fetch(`${config.url.API_URL_BACK}/api/blog`)
+    fetch(`${config.url.API_URL}/api/blog`)
       .then(function (res) {
         return res.json();
       })
@@ -52,7 +52,7 @@ function ArticleList() {
 
   const handleFilter = (category) => {
     const filter = category;
-    fetch(`${config.url.API_URL_BACK}/api/blog/?category=${filter}`)
+    fetch(`${config.url.API_URL}/api/blog/?category=${filter}`)
       .then(function (res) {
         return res.json();
       })
@@ -91,10 +91,7 @@ function ArticleList() {
                   {renderYear(article.publishedOnYear)}
                   <div className="blog__article-list-item">
                     <p>{format(new Date(article.date), "d MMM")}</p>
-                    <A
-                      href={`${config.url.API_URL_FRONT}/blog/${article.slug}`}
-                      key={index}
-                    >
+                    <A href={`/blog/${article.slug}`} key={index}>
                       {article.title}
                     </A>
                   </div>

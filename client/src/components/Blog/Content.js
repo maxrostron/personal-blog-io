@@ -15,7 +15,7 @@ function Content({ slug }) {
   );
 
   useEffect(() => {
-    fetch(`${config.url.API_URL_BACK}/api/blog/${slug}`)
+    fetch(`${config.url.API_URL}/api/blog/${slug}`)
       .then(function (res) {
         return res.json();
       })

@@ -13,7 +13,7 @@ function Comments({ article }) {
 
   useEffect(() => {
     article.comments.forEach((comment) => {
-      fetch(`${config.url.API_URL_BACK}/api/blog/comment/${comment}`)
+      fetch(`${config.url.API_URL}/api/blog/comment/${comment}`)
         .then(function (res) {
           return res.json();
         })

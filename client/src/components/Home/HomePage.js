@@ -6,6 +6,7 @@ import UpdateBox from "./updates-components/UpdateBox";
 import "./updates-components/HomeUpdateBox.css";
 
 function HomePage() {
+  console.log(process.env);
   return (
     <div className="home">
       <Carousel />
