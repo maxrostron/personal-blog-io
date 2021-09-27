@@ -1,17 +1,8 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-// const commentSchema = new Schema({
-//   number: Number,
-//   name: String,
-//   email: String,
-//   comment: String,
-//   postedAt: Date,
-//   relatedBlog: { type: Schema.Types.ObjectId, ref: "Blog" },
-// });
-
-const blogSchema = new Schema({
-  _id: String,
+const BlogSchema = new Schema({
+  blogId: String,
   meta: {
     isPublished: Boolean,
     publishedOnDay: String,
@@ -28,19 +19,9 @@ const blogSchema = new Schema({
     author: String,
     likes: Number,
   },
-  comments: [
-    {
-      number: Number,
-      name: String,
-      email: String,
-      comment: String,
-      postedAt: Date,
-    },
-  ],
-  // comments: [{ type: Schema.Types.ObjectID, ref: "Comment" }],
+  comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
 });
 
-// const Comment = mongoose.model("Comment", commentSchema);
-const Blog = mongoose.model("Blog", blogSchema);
+const Blog = mongoose.model("Blog", BlogSchema);
 
 export default Blog;

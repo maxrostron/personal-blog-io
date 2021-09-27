@@ -1,6 +1,8 @@
 import ArticleHeader from "!babel-loader!@mdx-js/loader!./mdx-components/ArticleHeader.mdx";
 
 import LikeButton from "./mdx-components/LikeButton.js";
+import CommentCreator from "./mdx-components/CommentCreator.js";
+import Comments from "./mdx-components/Comments.js";
 
 <ArticleHeader article={props.article} />
 
@@ -12,4 +14,9 @@ Morbi ac est a nisi volutpat faucibus. Nulla eleifend velit id lectus dapibus, v
 
 In hac habitasse platea dictumst. Nam lobortis diam nec dignissim rhoncus. Morbi vel lacinia enim. Nullam eget ultrices est. Proin porttitor a neque et finibus. Vestibulum interdum et metus sed pellentesque. Nulla facilisi.
 
-<LikeButton />
+<LikeButton article={props.article} />
+<section className="blog__comment-section">
+  <h4>{`Comments: [${props.article.comments.length}]`}</h4>
+  <Comments article={props.article} />
+  <CommentCreator article={props.article} />
+</section>

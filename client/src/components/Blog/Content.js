@@ -2,7 +2,7 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 
 function Content({ slug }) {
-  const [mdxFile, setMdxFile] = useState("Introduction");
+  const [mdxFile, setMdxFile] = useState("Loading");
   const [article, setArticle] = useState(null);
 
   const Article = lazy(() =>
@@ -19,8 +19,8 @@ function Content({ slug }) {
         return res.json();
       })
       .then((data) => {
-        setMdxFile(data.meta.componentName);
-        setArticle(data);
+        setMdxFile(data[0].meta.componentName);
+        setArticle(data[0]);
       })
       .catch(function (error) {
         console.log(error);
