@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import axios from "axios";
+import { config } from "../../../../../Constants";
 
 function LikeButton({ article }) {
   const [className, setClassName] = useState("blog__article-like-icon");
@@ -16,7 +17,7 @@ function LikeButton({ article }) {
     setLiked(true);
 
     axios
-      .post(`http://localhost:5000/api/blog/like`, {
+      .post(`${config.url.API_URL_BACK}/api/blog/like`, {
         id: `${article._id}`,
         likes: count + 1,
       })
@@ -34,7 +35,7 @@ function LikeButton({ article }) {
     setLiked(false);
 
     axios
-      .post(`http://localhost:5000/api/blog/like`, {
+      .post(`${config.url.API_URL_BACK}/api/blog/like`, {
         id: `${article._id}`,
         likes: count - 1,
       })

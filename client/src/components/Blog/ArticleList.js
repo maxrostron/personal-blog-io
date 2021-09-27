@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import format from "date-fns/format";
 import { A } from "hookrouter";
+import { config } from "../../Constants";
 
 function ArticleList() {
   const [list, setList] = useState(null);
@@ -13,7 +14,7 @@ function ArticleList() {
   }, []);
 
   const handleFetch = () => {
-    fetch(`http://localhost:5000/api/blog`)
+    fetch(`${config.url.API_URL_BACK}/api/blog`)
       .then(function (res) {
         return res.json();
       })
@@ -51,7 +52,7 @@ function ArticleList() {
 
   const handleFilter = (category) => {
     const filter = category;
-    fetch(`http://localhost:5000/api/blog/?category=${filter}`)
+    fetch(`${config.url.API_URL_BACK}/api/blog/?category=${filter}`)
       .then(function (res) {
         return res.json();
       })
@@ -91,7 +92,7 @@ function ArticleList() {
                   <div className="blog__article-list-item">
                     <p>{format(new Date(article.date), "d MMM")}</p>
                     <A
-                      href={`http://localhost:3000/blog/${article.slug}`}
+                      href={`${config.url.API_URL_FRONT}/blog/${article.slug}`}
                       key={index}
                     >
                       {article.title}

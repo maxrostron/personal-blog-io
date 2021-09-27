@@ -5,6 +5,7 @@ import parse from "html-react-parser";
 import { formatDistance } from "date-fns";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import { config } from "../../../../../Constants";
 
 function Comments({ article }) {
   const [commentData, setCommentData] = useState([]);
@@ -12,7 +13,7 @@ function Comments({ article }) {
 
   useEffect(() => {
     article.comments.forEach((comment) => {
-      fetch(`http://localhost:5000/api/blog/comment/${comment}`)
+      fetch(`${config.url.API_URL_BACK}/api/blog/comment/${comment}`)
         .then(function (res) {
           return res.json();
         })

@@ -2,11 +2,15 @@
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import axios from "axios";
+import { config } from "../../../../../Constants";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 function CommentCreator({ article }) {
   const [commentValue, setCommentValue] = useState("");
   const [nameValue, setNameValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   function handleNameChange(e) {
     e.preventDefault();
@@ -20,8 +24,9 @@ function CommentCreator({ article }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setSubmitted(true);
     axios
-      .post(`http://localhost:5000/api/blog/submitcomment`, {
+      .post(`${config.url.API_URL_BACK}/api/blog/submitcomment`, {
         blog: `${article._id}`,
         author: `${nameValue}`,
         email: `${emailValue}`,
@@ -30,6 +35,7 @@ function CommentCreator({ article }) {
       .then((response) => {
         console.log("response here");
         console.log(response);
+        setSubmitted(false);
         window.location.reload();
       })
       .catch((error) => {
@@ -67,11 +73,21 @@ function CommentCreator({ article }) {
           formats={CommentCreator.formats}
           placeholder={CommentCreator.placeholder.placeholder}
         />
-        <input
-          type="submit"
-          value="Post your comment"
-          className="blog__post-comment-button"
-        />
+        {!submitted ? (
+          <input
+            type="submit"
+            value="Post your comment"
+            className="blog__post-comment-button"
+          />
+        ) : (
+          <Loader
+            type="Rings"
+            color="#000000aa"
+            height={60}
+            width={60}
+            timeout={Infinity}
+          />
+        )}
       </form>
     </>
   );

@@ -1,10 +1,11 @@
 import format from "date-fns/format";
 import { navigate } from "hookrouter";
+import { config } from "../../../../../Constants";
 
 <div className="blog__article-header">
   <span
     className="blog__article-header-category"
-    onClick={() => navigate("http://localhost:3000/blog")}
+    onClick={() => navigate(`${config.url.API_URL_FRONT}/blog`)}
   >{`blog//${props.article.meta.category}`}</span>
   <h1 className="blog__article-header-title">{props.article.meta.title}</h1>
   <span className="blog__article-header-date">

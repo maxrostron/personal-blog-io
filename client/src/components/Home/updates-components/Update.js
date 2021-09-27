@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import format from "date-fns/format";
 import { navigate } from "hookrouter";
+import { config } from "../../../Constants";
 
 function Update({ article }) {
   const [isNew, setIsNew] = useState(null);
@@ -17,7 +18,9 @@ function Update({ article }) {
   return (
     <div
       className="home__update"
-      onClick={() => navigate(`http://localhost:3000/blog/${article.slug}`)}
+      onClick={() =>
+        navigate(`${config.url.API_URL_FRONT}/blog/${article.slug}`)
+      }
     >
       <div className="home__update-color"></div>
       <div className="home__update-content">

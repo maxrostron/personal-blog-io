@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Update from "./Update";
+import { config } from "../../../Constants";
 
 function UpdateBox() {
   const [list, setList] = useState(null);
@@ -8,7 +9,7 @@ function UpdateBox() {
     handleFetch();
   }, []);
   const handleFetch = () => {
-    fetch(`http://localhost:5000/api/blog`)
+    fetch(`${config.url.API_URL_BACK}/api/blog`)
       .then(function (res) {
         return res.json();
       })

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { lazy, Suspense, useEffect, useState } from "react";
+import { config } from "../../Constants";
 
 function Content({ slug }) {
   const [mdxFile, setMdxFile] = useState("Loading");
@@ -14,7 +15,7 @@ function Content({ slug }) {
   );
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/blog/${slug}`)
+    fetch(`${config.url.API_URL_BACK}/api/blog/${slug}`)
       .then(function (res) {
         return res.json();
       })
