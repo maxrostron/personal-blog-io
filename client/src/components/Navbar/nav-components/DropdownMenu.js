@@ -7,7 +7,7 @@ function DropdownMenu({ pathway, setOpen }) {
   const pages = pathway.pages;
   const url = pathway.url;
 
-  DropdownMenu.handleClickOutside = () => setOpen("");
+  DropdownMenu.handleClickOutside = () => setOpen();
   return (
     <ul className="navbar__drop-down-menu">
       {pages.map((page, index) => {

@@ -16,7 +16,7 @@ const Navbar = () => {
       ],
     },
     open: {
-      url: "/more",
+      url: "",
       displayName: "More:",
       pages: [
         { display: "Now", url: "/now" },

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./components/Home/HomePage";
 import Footer from "./components/Footer/Footer";
 import BlogPage from "./components/Blog/BlogPage";
+import Now from "./components/More/Now/Now";
 import { useRoutes } from "hookrouter";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     "/": () => <HomePage />,
     "/blog": () => <BlogPage />,
     "/blog/:slug": ({ slug }) => <BlogPage slug={slug} />,
+    "/now": () => <Now />,
   };
 
   const routeResults = useRoutes(routes);
