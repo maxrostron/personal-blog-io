@@ -20,3 +20,80 @@
   line-height: 0.5rem;
   color: #278e8d;
 }
+
+.utility__sidenote-container {
+  width: 96%;
+  min-height: 4rem;
+  background-color: #d4e0e2;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0.3rem;
+  margin-left: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.utility__sidenote-icon {
+  position: absolute;
+  width: 1.3rem;
+  height: 1.3rem;
+  top: -0.9rem;
+  left: -0.9rem;
+  background-color: #f8f5f2;
+  border-radius: 10rem;
+  border: 0.3rem solid #f8f5f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.utility__sidenote-icon:hover {
+  cursor: pointer;
+}
+
+.utility__sidenote-icon-inner {
+  border: 0.15rem solid #278e8d;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 0.9rem;
+  font-weight: 600;
+  color: #278e8d;
+}
+
+.utility__sidenote-bar {
+  height: 100%;
+  width: 0.15rem;
+  background-color: #278e8d;
+}
+
+.utility__sidenote-contents {
+  padding: 0.7rem 1.5rem 0.4rem 1.2rem;
+}
+
+.utility__sidenote-contents-link {
+  background-color: rgba(255, 255, 255, 0.405);
+  border-radius: 20rem;
+  margin-left: 0.1rem;
+  color: rgba(0, 0, 0, 0.789);
+  padding-left: 0.1rem;
+  padding-right: 0.2rem;
+  width: 64ch;
+}
+
+.utility__sidenote-contents-link:hover {
+  background-color: rgba(255, 255, 255, 0.686);
+}
+
+.utility__sidenote-contents > :nth-child(1) {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.utility__sidenote-contents > :nth-child(2) {
+  color: rgba(0, 0, 0, 0.789);
+  font-size: 0.85rem;
+}

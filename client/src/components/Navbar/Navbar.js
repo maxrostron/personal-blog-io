@@ -21,10 +21,10 @@ const Navbar = () => {
       pages: [
         { display: "Now", url: "/now" },
         { display: "Open", url: "/open" },
-        { display: "Books", url: "/books" },
-        { display: "Photos", url: "/photos" },
-        { display: "My Gear", url: "/gear" },
-        { display: "FAQ", url: "/faq" },
+        // { display: "Books", url: "/books" },
+        // { display: "Photos", url: "/photos" },
+        // { display: "My Gear", url: "/gear" },
+        // { display: "FAQ", url: "/faq" },
       ],
     },
     blog: {

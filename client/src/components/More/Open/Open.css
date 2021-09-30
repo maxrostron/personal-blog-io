@@ -1,0 +1,15 @@
+.open__container {
+  width: 90%;
+  max-width: 64ch;
+  font-size: 1rem;
+  line-height: 140%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.open__header {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}

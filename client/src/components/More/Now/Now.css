@@ -1,0 +1,28 @@
+.now__container {
+  width: 90%;
+  max-width: 64ch;
+  font-size: 1rem;
+  line-height: 140%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.now__header {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.now__container > p > a {
+  background-color: #d4e0e2ad;
+  border-radius: 1rem;
+  margin-left: 0.1rem;
+  color: rgba(0, 0, 0, 0.789);
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.now__container > p > a:hover {
+  background-color: rgba(232, 237, 238, 0.59);
+}

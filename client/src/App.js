@@ -5,6 +5,7 @@ import HomePage from "./components/Home/HomePage";
 import Footer from "./components/Footer/Footer";
 import BlogPage from "./components/Blog/BlogPage";
 import Now from "./components/More/Now/Now";
+import Open from "./components/More/Open/Open";
 import { useRoutes } from "hookrouter";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     "/blog": () => <BlogPage />,
     "/blog/:slug": ({ slug }) => <BlogPage slug={slug} />,
     "/now": () => <Now />,
+    "/open": () => <Open />,
   };
 
   const routeResults = useRoutes(routes);
