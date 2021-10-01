@@ -1,5 +1,5 @@
-import Blog from "../models/blog.js";
-import Comment from "../models/comment.js";
+import Blog from "../models/blogModels/blog.js";
+import Comment from "../models/blogModels/comment.js";
 
 export const getArticleList = (req, res) => {
   const filter = req.query;
@@ -107,8 +107,3 @@ export const likeComment = async (req, res) => {
     }
   });
 };
-
-//TRYING TO FIGURE OUT WHY COMMENTS AREN'T UPLOADING TO MONGODB WITH THE FULL OBJECT DATA
-// AIM IS TO USE RELATIONAL COMMENTS TO BLOG POSTS (RATHER THAN STORING COMMENTS IN AN ARRAY IN BLOG POST)
-//TRY LOOK UP THE ORIGINAL LIBRARY AND BOOK TUTORIAL RE: RELATIONAL DBs..
-//ONCE GOT WORKING, THEN NEEDED TO IMPLEMENT THE LIKE COMMENT BUTTON SO "ONCLICK" IT FINDS COMMENT BY _ID AND UPDATES IT'S LIKE COUNT +1

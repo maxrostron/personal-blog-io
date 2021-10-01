@@ -31,8 +31,10 @@ connection.once("open", () => {
 });
 
 //Establish API Routes
-import apiRouter from "./routes/api.route.js";
-app.use("/api", apiRouter);
+import blogRouter from "./routes/blog.route.js";
+import userRouter from "./routes/user.route.js";
+app.use("/api/blog", blogRouter);
+app.use("/api/user", userRouter);
 
 // AFTER defining routes: Anything that doesn't match what's above, send back index.html;
 app.get("*", (req, res) => {
