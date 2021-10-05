@@ -3,6 +3,13 @@ import React, { useState } from "react";
 import { config } from "../../Constants";
 import axios from "axios";
 
+//So need to make this page look nicer & include a button for "resending verificaiton link"
+// Also need to explore how to send custom "update" emails
+// Also need to figure out how to sned emails from various domains i.e.
+// verify@maxrostron.com for signup
+// hey@mr.com for contact
+// updates@maxrostron.com for blog posts.
+
 function Subscribe() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
