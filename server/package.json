@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js",
     "devstart": "nodemon index.js",
-    "serverstart": "DEBUG=sponsorship-app:* npm run devstart"
+    "serverstart": "DEBUG=maxrostron-io:* npm run devstart"
   },
   "keywords": [],
   "author": "",

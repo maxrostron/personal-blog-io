@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import nodemailer from "nodemailer";
+import { createTransport } from "nodemailer";
 import sendgridTransport from "nodemailer-sendgrid-transport";
 import User from "../models/userModels/user.js";
 import Token from "../models/userModels/token.js";
@@ -36,7 +36,7 @@ export const signup = function (req, res, next) {
           }
 
           // Send email (use verified sender's email address & generated API_KEY on SendGrid)
-          const transporter = nodemailer.createTransport(
+          const transporter = createTransport(
             sendgridTransport({
               auth: {
                 api_key: process.env.SENDGRID_APIKEY,
@@ -154,7 +154,7 @@ export const resendLink = function (req, res, next) {
         }
 
         // Send email (use verified sender's email address & generated API_KEY on SendGrid)
-        const transporter = nodemailer.createTransport(
+        const transporter = createTransport(
           sendgridTransport({
             auth: {
               api_key: process.env.SENDGRID_APIKEY,
