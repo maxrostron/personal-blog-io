@@ -1,4 +1,3 @@
-import nodemailer from "nodemailer";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
 import sendgridTransport from "nodemailer-sendgrid-transport";
