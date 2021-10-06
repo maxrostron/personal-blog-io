@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import nodemailer from "nodemailer";
 import sendgridTransport from "nodemailer-sendgrid-transport";
 import User from "../models/userModels/user.js";
 import Token from "../models/userModels/token.js";
