@@ -7,6 +7,8 @@ import BlogPage from "./components/Blog/BlogPage";
 import Now from "./components/More/Now/Now";
 import Open from "./components/More/Open/Open";
 import Subscribe from "./components/Subscribe/Subscribe";
+import SubscribeVerification from "./components/Subscribe/SubscribeVerification";
+import Contact from "./components/Contact/Contact";
 import { useRoutes } from "hookrouter";
 
 function App() {
@@ -18,6 +20,10 @@ function App() {
     "/now": () => <Now />,
     "/open": () => <Open />,
     "/subscribe": () => <Subscribe />,
+    "/subscribe/verification/:code/:value": ({ code, value }) => (
+      <SubscribeVerification code={code} value={value} />
+    ),
+    "/contact": () => <Contact />,
   };
 
   const routeResults = useRoutes(routes);

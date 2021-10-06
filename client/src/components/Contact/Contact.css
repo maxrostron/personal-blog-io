@@ -1,0 +1,103 @@
+.contact__container {
+  width: 90%;
+  max-width: 64ch;
+  font-size: 1rem;
+  line-height: 140%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__container > h1 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact__container > span {
+  font-size: 1.1rem;
+  margin-left: 0.2rem;
+}
+
+.contact__cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact__card {
+  display: flex;
+  flex-direction: row;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.172);
+  width: 85%;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.748);
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.contact__card:hover {
+  cursor: pointer;
+}
+
+.contact__card-image {
+  padding: 1rem;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+}
+
+.contact__card-image > div {
+  border-radius: 9999px;
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.contact__card-image > img {
+  filter: invert(16%) sepia(79%) saturate(1320%) hue-rotate(188deg)
+    brightness(80%) contrast(103%);
+  fill-opacity: 0.4;
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  z-index: 10;
+}
+
+.contact__card-text {
+  padding: 0.8rem 1rem 1.2rem 0.6rem;
+  display: flex;
+  height: 2rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact__card-text > p {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.713);
+}
+
+.contact__card-text > a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #278e8d;
+}
+
+.contact__card-text > a:hover {
+  filter: brightness(110%);
+}
+
+.twitter-circle {
+  background-color: rgb(224, 242, 254);
+}
+
+.twitter-icon {
+  filter: invert(89%) sepia(17%) saturate(6304%) hue-rotate(173deg)
+    brightness(104%) contrast(98%);
+}

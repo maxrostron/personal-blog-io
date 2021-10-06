@@ -68,9 +68,7 @@ export const signup = function (req, res, next) {
             return res
               .status(200)
               .send(
-                "A verification email has been sent to " +
-                  user.email +
-                  ". It will be expire after one day. If you not get verification Email click on resend token."
+                "A verification email has been sent to " + user.email + "."
               );
           });
         });
@@ -83,9 +81,14 @@ export const verifyEmail = function (req, res, next) {
   Token.findOne({ token: req.params.token }, function (err, token) {
     // token is not found into database i.e. token may have expired
     if (!token) {
-      return res.status(400).send({
-        msg: "Your verification link may have expired. Please click on resend for verify your Email.",
-      });
+      return res.redirect(
+        400,
+        `/subscribe/verification/expired/${req.params.email}`
+      );
+
+      // return res.status(400).send({
+      //   msg: "Your verification link may have expired. Please click on resend for verify your Email.",
+      // });
     }
     // if token is found then check valid user
     else {
@@ -94,15 +97,23 @@ export const verifyEmail = function (req, res, next) {
         function (err, user) {
           // not valid user
           if (!user) {
-            return res.status(401).send({
-              msg: "We were unable to find a user for this verification. Please SignUp!",
-            });
+            return res.redirect(
+              401,
+              `/subscribe/verification/unknown/${req.params.email}`
+            );
+            // return res.status(401).send({
+            //   msg: "We were unable to find a user for this verification. Please Sign Up!",
+            // });
           }
           // user is already verified
           else if (user.isVerified) {
-            return res
-              .status(200)
-              .send("User has been already verified. Please Login");
+            return res.redirect(
+              200,
+              `/subscribe/verification/verified/${req.params.email}`
+            );
+            // return res
+            //   .status(200)
+            //   .send("User has been already verified. Please Login");
           }
           // verify user
           else {
@@ -111,13 +122,21 @@ export const verifyEmail = function (req, res, next) {
             user.save(function (err) {
               // error occur
               if (err) {
-                return res.status(500).send({ msg: err.message });
+                return res.redirect(
+                  500,
+                  `/subscribe/verification/error/${err.message}`
+                );
+                // return res.status(500).send({ msg: err.message });
               }
               // account successfully verified
               else {
-                return res
-                  .status(200)
-                  .send("Your account has been successfully verified");
+                return res.redirect(
+                  400,
+                  `/subscribe/verification/success/${req.params.email}`
+                );
+                // return res
+                //   .status(200)
+                //   .send("Your account has been successfully verified");
               }
             });
           }
@@ -132,14 +151,16 @@ export const resendLink = function (req, res, next) {
     // user is not found into database
     if (!user) {
       return res.status(400).send({
-        msg: "We were unable to find a user with that email. Make sure your Email is correct!",
+        msg: "We were unable to find an account with that email. Make sure your Email is correct!",
       });
     }
     // user has been already verified
     else if (user.isVerified) {
       return res
         .status(200)
-        .send("This account has been already verified. Please log in.");
+        .send(
+          "This account has been already verified. You do not need to take any further action."
+        );
     }
     // send verification link
     else {
@@ -186,9 +207,7 @@ export const resendLink = function (req, res, next) {
           return res
             .status(200)
             .send(
-              "A verification email has been sent to " +
-                user.email +
-                ". It will be expire after one day. If you not get verification Email click on resend token."
+              "A new verification email has been sent to " + user.email + "."
             );
         });
       });
