@@ -53,6 +53,8 @@ function SubscribeForm({
   setCustomMessage,
 }) {
   const [errorMsg, setErrorMsg] = useState(null);
+  const [unsubscribe, setUnsubscribe] = useState(false);
+
   function handleNameChange(e) {
     e.preventDefault();
     setName(e.target.value);
@@ -63,7 +65,7 @@ function SubscribeForm({
     setEmail(e.target.value);
   }
 
-  const handleSubmit = (e) => {
+  const handleSubscribe = (e) => {
     axios
       .post(`${config.url.API_URL}/api/user/signup`, {
         name: `${name}`,
@@ -74,17 +76,35 @@ function SubscribeForm({
         setSubscribed(true);
       })
       .catch(function (error) {
-        console.log(error);
-        setErrorMsg(
-          "This email address is already associated with another account."
-        );
+        setErrorMsg(error.response.data);
+        setUnsubscribe(true);
+      });
+
+    e.preventDefault();
+  };
+
+  const handleUnsubscribe = (e) => {
+    axios
+      .post(`${config.url.API_URL}/api/user/unsubscribe`, {
+        name: `${name}`,
+        email: `${email}`,
+      })
+      .then(function (response) {
+        setErrorMsg(response.data);
+        setUnsubscribe(false);
+      })
+      .catch(function (error) {
+        setErrorMsg(error.response.data);
       });
 
     e.preventDefault();
   };
 
   return (
-    <form onSubmit={handleSubmit} className="subscribe__container">
+    <form
+      onSubmit={unsubscribe ? handleUnsubscribe : handleSubscribe}
+      className="subscribe__container"
+    >
       <input
         className="subscribe__text-input"
         type="text"
@@ -109,7 +129,11 @@ function SubscribeForm({
         </p>
       ) : null}
 
-      <input type="submit" value="Subscribe!" className="subscribe__button" />
+      <input
+        type="submit"
+        value={unsubscribe ? "Unsubscribe" : "Subscribe!"}
+        className="subscribe__button"
+      />
     </form>
   );
 }
@@ -127,7 +151,7 @@ function Confirmation({ name, email, customMessage }) {
         setResponse(response);
       })
       .catch(function (error) {
-        console.log(error);
+        setResponse(error.response.data);
       });
 
     e.preventDefault();
