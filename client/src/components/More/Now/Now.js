@@ -5,7 +5,7 @@ import SideBodyNow from "!babel-loader!@mdx-js/loader!./SideBodyNow.mdx";
 import NowMDX from "!babel-loader!@mdx-js/loader!./NowMDX.mdx";
 
 function Now() {
-  const sideTitle = "A brief introduction to 'Now' pages";
+  const sideTitle = "What is a 'Now' Page?";
 
   return (
     <div className="now__container">
